@@ -13,15 +13,44 @@
         let i=document.getElementById('in').value
         alert(parseInt(i)+1)
     }
+    </script>
 
-
+    <script>
+    function checkBaggage() {
+        const weight = parseFloat(document.getElementById("baggageWeight").value);
+      
+      if (isNaN(weight)) {
+        alert("Please enter a valid weight.");
+      } else if (weight > 15) {
+        alert("Your baggage exceeds the 15kg allowance.");
+      } else {
+        alert("Your baggage is within the allowed limit.");
+      }
+    }
+    </script>
     </script>
 </head>
 <body>
+    
+        
+
     <H1> Hello World</H1>
     <input type="text" id ="in">
     <button onclick='c()'>Press Me</button>
+
+    <p>Exercise 1:</p>
+        <p>Create a function and button which allows a user to enter baggage weight and alerts them if 
+        the baggage exceeds the allowance of 15kg
+    </p>
     
+  
+
+
+  <h2>Baggage Weight Checker</h2>
+
+  <label for="baggageWeight">Enter your baggage weight (kg):</label>
+  <input type="number" id="baggageWeight" placeholder="e.g. 12">
+  <button onclick="checkBaggage()">Check</button>
 
 </body>
 </html>
