@@ -7,8 +7,20 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='index.js'></script>
+    <script>
+    alert("This is an inline script")
+    let c=()=>{
+        let i=document.getElementById('in').value
+        alert(parseInt(i)+1)
+    }
+
+
+    </script>
 </head>
 <body>
     <H1> Hello World</H1>
+    <input type="text" id ="in">
+    <button onclick="'c()'> Press Me</button>
+
 </body>
 </html>
