@@ -23,7 +23,12 @@
         alert("Please enter a valid weight.");
       } else if (weight > 15) {
         alert("Your baggage exceeds the 15kg allowance.");
-      } else {
+      } else if(weight <15)
+      {
+        alert("Pls, you need to type valid limit for the baggage!")
+      }
+      
+      else {
         alert("Your baggage is within the allowed limit.");
       }
     }
