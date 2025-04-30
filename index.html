@@ -90,6 +90,114 @@
 
 
 
+    <script>
+      function f4(a, b, l) {
+        let sum = 0;
+        for (let num of l) {
+          if (num % a === 0 || num % b === 0) {
+            sum += num;
+          }
+        }
+        return sum;
+
+        
+      }
+  
+      function handleClick() {
+        const aValue = document.getElementById('avalue').value;
+        const bValue = document.getElementById('bvalue').value;
+        const l_input = document.getElementById('lvalue').value;
+      
+        if (aValue === '' || bValue === '' || l_input.trim() === '') {
+          alert("Please fill in all the fields correctly.");
+          return;
+        }
+      
+        const a = parseInt(aValue);
+        const b = parseInt(bValue);
+      
+        const l = l_input.split(',').map(Number);
+      
+        const result = f4(a, b, l);
+      
+        alert("The sum of multiples of " + a + " or " + b + " is: " + result);
+      }
+      
+    </script>
+
+    <script>
+      function f5(a, l) {
+        let sum = 0;
+        for (let num of l) {
+          if (num % a[0] === 0 || num % a[1] === 0) {
+            sum += num;
+          }
+        }
+        return sum;
+      }
+  
+      function handleClick() {
+        const a_input = document.getElementById('avalue1').value;
+        const l_input = document.getElementById('lvalue1').value;
+  
+        if (a_input.trim() === '' || l_input.trim() === '') {
+          alert("Please fill in both input boxes.");
+          return;
+        }
+  
+        const a = a_input.split(',').map(Number);
+        const l = l_input.split(',').map(Number);
+  
+        if (a.length !== 2 || a.some(isNaN) || l.some(isNaN)) {
+          alert("Please enter valid arrays. 'a' must contain exactly 2 numbers.");
+          return;
+        }
+  
+        const result = f5(a, l);
+  
+        alert("The sum of multiples of " + a[0] + " or " + a[1] + " is: " + result);
+      }
+    </script>
+
+
+    <script>
+      function f6(a, l) {
+        let sum = 0;
+        for (let num of l) {
+          for (let factor of a) {
+            if (num % factor === 0) {
+              sum += num;
+              break; // No need to check other factors once matched
+            }
+          }
+        }
+        return sum;
+      }
+  
+      function handleClick() {
+        const a_input = document.getElementById('avalue2').value;
+        const l_input = document.getElementById('lvalue2').value;
+  
+        if (a_input.trim() === '' || l_input.trim() === '') {
+          alert("Please fill in both input boxes.");
+          return;
+        }
+  
+        const a = a_input.split(',').map(Number);
+        const l = l_input.split(',').map(Number);
+  
+        if (a.some(isNaN) || l.some(isNaN)) {
+          alert("Please enter valid comma-separated numbers.");
+          return;
+        }
+  
+        const result = f6(a, l);
+  
+        alert("The sum of all multiples of " + a.join(", ") + " in the list is: " + result);
+      }
+    </script>
+  
+
 </head>
 <body>
     
@@ -151,9 +259,78 @@
   <label for="c">C:</label><br>
   <input type="number" id="c" placeholder="Please enter any number"><br><br>
 
-
-</form>
 <button onclick="callfn()">Press Me</button>
+</form>
 
+
+<hr>
+
+<h2>Exercise 4.1: Sum of Multiples in Array</h2>
+
+<p>Exercise 4, Arrays: f4 should take 2 integer and 1 array parameters and return an integer.</p>
+<p>Create a function f4 to return the sum of all the multiples of a or b in array l</p>
+<p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
+<p>Call the function f4 in the function called by onClick, and alert the user to the 
+    returned answer when they press the button.</p>        
+    
+
+  <label for="a">Enter a:</label>
+  <input type="number" id="avalue"><br><br>
+
+  <label for="b">Enter b:</label>
+  <input type="number" id="bvalue"><br><br>
+
+  <label for="l">Enter array (comma separated):</label><br>
+  <textarea id="lvalue" rows="4" cols="50" placeholder="e.g. 3,5,6,9,10,12"></textarea><br><br>
+
+  <button onclick="handleClick()">Calculate</button>
+
+<hr>
+
+
+  <h2>Exercise 5.1: Sum of Multiples (Array of Factors)</h2>
+
+  <p>Create a function f5 to return the sum of all the multiples of factors in a 
+    found in in l (a and l should be arrays of integers, a is of length 2)</p>
+<p>(Exercise 5.1) Create a page with a button and two wide input boxes, labelled a and l</p>
+<p>Call the function f5 in the function called by onClick, and alert the user to the 
+    returned answer when they press the button.</p>
+</p>
+<p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
+
+  <label for="a">Enter array a (two numbers, comma-separated):</label><br>
+  <input type="text" id="avalue1" size="50" placeholder="e.g. 3,5"><br><br>
+
+  <label for="l">Enter array l (comma-separated numbers):</label><br>
+  <input type="text" id="lvalue1" size="50" placeholder="e.g. 3,5,6,7,9,10"><br><br>
+
+  <button onclick="handleClick()">Calculate</button>
+
+
+  <hr>
+
+  <h2>Exercise 6.1: Sum of Multiples (Many Factors)</h2>
+  <p>Exercise 6, Arrays: f6 should take array parameters and return an integer.</p>
+<p>Create a function f6 to return the sum of all the multiples of factors in a 
+    found in in l (a and l should be arrays of integers)</p>
+<p>(Exercise 6.1) Create a page with a button and two wide input boxes, labelled a and l</p>
+<p>Call the function f6 in the function called by onClick, and alert the user to the 
+    returned answer when they press the button.</p>
+</p>
+<p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
+
+
+
+
+<label for="a">Enter array a (comma-separated factors):</label><br>
+<input type="text" id="avalue2" size="50" placeholder="e.g. 2,3,5"><br><br>
+
+<label for="l">Enter array l (comma-separated numbers):</label><br>
+<input type="text" id="lvalue2" size="50" placeholder="e.g. 2,3,5,6,9,10"><br><br>
+
+<button onclick="handleClick()">Calculate</button>
+
+
+<pr>
 </body>
 </html>
