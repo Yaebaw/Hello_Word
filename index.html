@@ -103,10 +103,10 @@
         
       }
   
-      function handleClick() {
-        const aValue = document.getElementById('avalue').value;
-        const bValue = document.getElementById('bvalue').value;
-        const l_input = document.getElementById('lvalue').value;
+      function handleClicks() {
+        const aValue = document.getElementById('aa').value;
+        const bValue = document.getElementById('bb').value;
+        const l_input = document.getElementById('ll').value;
       
         if (aValue === '' || bValue === '' || l_input.trim() === '') {
           alert("Please fill in all the fields correctly.");
@@ -136,7 +136,7 @@
         return sum;
       }
   
-      function handleClick() {
+      function handleClick5() {
         const a_input = document.getElementById('avalue1').value;
         const l_input = document.getElementById('lvalue1').value;
   
@@ -275,15 +275,15 @@
     
 
   <label for="a">Enter a:</label>
-  <input type="number" id="avalue"><br><br>
+  <input type="number" id="aa"><br><br>
 
   <label for="b">Enter b:</label>
-  <input type="number" id="bvalue"><br><br>
+  <input type="number" id="bb"><br><br>
 
   <label for="l">Enter array (comma separated):</label><br>
-  <textarea id="lvalue" rows="4" cols="50" placeholder="e.g. 3,5,6,9,10,12"></textarea><br><br>
+  <textarea id="ll" rows="4" cols="50" placeholder="e.g. 3,5,6,9,10,12"></textarea><br><br>
 
-  <button onclick="handleClick()">Calculate</button>
+  <button onclick="handleClicks()">Calculate</button>
 
 <hr>
 
@@ -304,7 +304,7 @@
   <label for="l">Enter array l (comma-separated numbers):</label><br>
   <input type="text" id="lvalue1" size="50" placeholder="e.g. 3,5,6,7,9,10"><br><br>
 
-  <button onclick="handleClick()">Calculate</button>
+  <button onclick="handleClick5()">Calculate</button>
 
 
   <hr>
