@@ -90,112 +90,11 @@
 
 
 
-    <script>
-      function f4(a, b, l) {
-        let sum = 0;
-        for (let num of l) {
-          if (num % a === 0 || num % b === 0) {
-            sum += num;
-          }
-        }
-        return sum;
+    <script src='ex_4.js' defer></script>
 
-        
-      }
-  
-      function handleClicks() {
-        const aValue = document.getElementById('aa').value;
-        const bValue = document.getElementById('bb').value;
-        const l_input = document.getElementById('ll').value;
-      
-        if (aValue === '' || bValue === '' || l_input.trim() === '') {
-          alert("Please fill in all the fields correctly.");
-          return;
-        }
-      
-        const a = parseInt(aValue);
-        const b = parseInt(bValue);
-      
-        const l = l_input.split(',').map(Number);
-      
-        const result = f4(a, b, l);
-      
-        alert("The sum of multiples of " + a + " or " + b + " is: " + result);
-      }
-      
-    </script>
+    <script src='ex_5.js'></script>
 
-    <script>
-      function f5(a, l) {
-        let sum = 0;
-        for (let num of l) {
-          if (num % a[0] === 0 || num % a[1] === 0) {
-            sum += num;
-          }
-        }
-        return sum;
-      }
-  
-      function handleClick5() {
-        const a_input = document.getElementById('avalue1').value;
-        const l_input = document.getElementById('lvalue1').value;
-  
-        if (a_input.trim() === '' || l_input.trim() === '') {
-          alert("Please fill in both input boxes.");
-          return;
-        }
-  
-        const a = a_input.split(',').map(Number);
-        const l = l_input.split(',').map(Number);
-  
-        if (a.length !== 2 || a.some(isNaN) || l.some(isNaN)) {
-          alert("Please enter valid arrays. 'a' must contain exactly 2 numbers.");
-          return;
-        }
-  
-        const result = f5(a, l);
-  
-        alert("The sum of multiples of " + a[0] + " or " + a[1] + " is: " + result);
-      }
-    </script>
-
-
-    <script>
-      function f6(a, l) {
-        let sum = 0;
-        for (let num of l) {
-          for (let factor of a) {
-            if (num % factor === 0) {
-              sum += num;
-              break; // No need to check other factors once matched
-            }
-          }
-        }
-        return sum;
-      }
-  
-      function handleClick() {
-        const a_input = document.getElementById('avalue2').value;
-        const l_input = document.getElementById('lvalue2').value;
-  
-        if (a_input.trim() === '' || l_input.trim() === '') {
-          alert("Please fill in both input boxes.");
-          return;
-        }
-  
-        const a = a_input.split(',').map(Number);
-        const l = l_input.split(',').map(Number);
-  
-        if (a.some(isNaN) || l.some(isNaN)) {
-          alert("Please enter valid comma-separated numbers.");
-          return;
-        }
-  
-        const result = f6(a, l);
-  
-        alert("The sum of all multiples of " + a.join(", ") + " in the list is: " + result);
-      }
-    </script>
+    <script src='ex_6.js'></script>
   
 
 </head>
@@ -304,7 +203,7 @@
   <label for="l">Enter array l (comma-separated numbers):</label><br>
   <input type="text" id="lvalue1" size="50" placeholder="e.g. 3,5,6,7,9,10"><br><br>
 
-  <button onclick="handleClick5()">Calculate</button>
+  <button onclick="handleClick()">Calculate</button>
 
 
   <hr>
