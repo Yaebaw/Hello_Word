@@ -231,5 +231,60 @@
 
 
 <pr>
+
+
+<p>Exercise 7, Objects as dictionaries/hashtables:</p>
+<p>Create a function, f7, that takes two parameters, basket and prices</p>
+<p>f7 should compute the cost of the basket given the prices supplied.</p>
+<p>basket should be an object holding product:quantity (string:int) pairs</p>
+<p>prices should be an object holding product:price (string:float) pairs</p>
+
+<p>==7.1==</p>
+<p>Create a testing page for the function f7</p>
+
+<button onclick="basketclick()">To Click</button>
+
+
+<script>
+    function f7(basket, prices) {
+      let total = 0;
+      for (let item in basket) {
+       
+          total += basket[item] * prices[item];
+        
+      }
+      return total;
+    }
+
+    function basketclick() {
+      const testBasket = {
+        "apple": 3,
+        "apple": 2,
+        "orange": 5
+      };
+
+      const testPrices = {
+        "apple": 0.5,
+        "banana": 0.3,
+        "orange": 0.7
+      };
+
+      const result = f7(testBasket, testPrices);
+      console.log("Total cost is:", result);
+      alert("Total cost is: " + result);
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
 </body>
+
+
 </html>
